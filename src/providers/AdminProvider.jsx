@@ -4,11 +4,8 @@ import { useProvideAuthAdmin } from '../../hooks';
 
 const initialState = {
   admin: null,
-  setAdmin:null,
   register: () => {},
   login: () => {},
-  updateAdmin:()=>{},
-  uploadPicture:()=>{},
   logout: () => {},
   loading: true,
 };
