@@ -16,6 +16,7 @@ const RegisterPage = () => {
     address:'',
     municipality:'', 
     email:'', 
+    contact:'',
     password:'',
   });
   const [redirect, setRedirect] = useState(false);
@@ -43,6 +44,10 @@ const RegisterPage = () => {
       return false;
     } else if (formData.name.trim() === '') {
       toast.error("name is required");
+      return false;
+    }
+    else if (formData.contact.trim() === '') {
+      toast.error("contact is required");
       return false;
     }
 
@@ -121,6 +126,16 @@ if(formDataIsValid){
             value={formData.municipality}
             onChange={handleFormData}
             />
+          <label htmlFor="contact">Contact</label>
+          <input
+            name="contact"
+            className='text-black'
+            id='contact'
+            type="text"
+            placeholder="Enter your contact number"
+            value={formData.contact}
+            onChange={handleFormData}
+          />
         <label htmlFor="email">Email</label>
           <input
             name="email"
