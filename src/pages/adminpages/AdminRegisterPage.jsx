@@ -12,7 +12,8 @@ const AdminRegisterPage = () => {
     citizenid:'',
     joiningid:'',
     municipality:'',
-    email:'', 
+    email:'',
+    contact:'',
     address:'',
     password:'',
   });
@@ -54,7 +55,7 @@ const AdminRegisterPage = () => {
             id='admin_name'
             placeholder="Enter your Name"
             value={formData.name}
-            onChange={handleFormData}
+            onChange={handleFormData} required
           />
         <label htmlFor="admin_citizenid">Citizenship ID</label>
           <input
@@ -64,6 +65,7 @@ const AdminRegisterPage = () => {
             placeholder="Enter your Citizenship ID"
             value={formData.citizenid}
             onChange={handleFormData}
+            required
           />
         <label htmlFor="admin_joiningid">Joining ID</label>
           <input
@@ -73,6 +75,7 @@ const AdminRegisterPage = () => {
             placeholder="Enter the joining ID given by the Organization"
             value={formData.joiningid}
             onChange={handleFormData}
+            required
           />
         <label htmlFor="admin_municipality">Municipality</label>
           <input
@@ -82,6 +85,7 @@ const AdminRegisterPage = () => {
             placeholder="Enter Municipaliy where you work"
             value={formData.municipality}
             onChange={handleFormData}
+            required
           />
           
         <label htmlFor="admin_email">Email</label>
@@ -92,6 +96,17 @@ const AdminRegisterPage = () => {
             placeholder="Enter your Email"
             value={formData.email}
             onChange={handleFormData}
+            required
+          />
+          <label htmlFor="contact">Contact</label>
+          <input
+            name="contact"
+            id='contact'
+            type="text"
+            placeholder="Enter your Contact Number"
+            value={formData.contact}
+            onChange={handleFormData}
+            required
           />
         <label htmlFor="admin_address">Permanent Address</label>
           <input
@@ -101,6 +116,7 @@ const AdminRegisterPage = () => {
             placeholder="Enter your Permanent Address"
             value={formData.address}
             onChange={handleFormData}
+            required
           />
         <label htmlFor="admin_password">Password</label>
           <input
@@ -110,6 +126,7 @@ const AdminRegisterPage = () => {
             placeholder="Enter your Password"
             value={formData.password}
             onChange={handleFormData}
+            required
           />
           <button className="primary my-2">Register</button>
         </form>
