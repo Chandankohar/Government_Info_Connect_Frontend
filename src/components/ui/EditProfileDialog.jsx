@@ -80,7 +80,7 @@ const EditProfileDialog = () => {
       };
 
       const res = await updateUser(userDetails);
-      console.log('response',res.user)
+      
       if (res.success) {
         setUser(res.user);
       
