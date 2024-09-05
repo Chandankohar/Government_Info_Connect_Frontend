@@ -111,6 +111,12 @@ export const useProvideAuthAdmin = () => {
             const { data } = await axiosInstance.put('/admin/update-admin', {
                 name,email,address,contact, picture,joiningid,
             })
+             if (data.admin && data.token) {
+                setAdmin(data.admin)
+                // save user and token in local storage
+                setItemsInLocalStorage('admin', data.admin)
+                setItemsInLocalStorage('admintoken', data.token)
+            }
             return data;
         } catch (error) {
             console.log(error)
@@ -239,6 +245,11 @@ export const useProvideAuth = () => {
             const { data } = await axiosInstance.put('/user/update-user', {
                 name,email,address,contact, picture,citizenid,
             })
+             if(data.success){
+            setUser(data.user)
+            setItemsInLocalStorage('user', data.user)
+            setItemsInLocalStorage('usertoken', data.token)
+           }
             return data;
         } catch (error) {
             console.log(error)
