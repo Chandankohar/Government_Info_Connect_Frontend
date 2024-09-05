@@ -46,7 +46,7 @@ function AboutUs() {
         <>
           <h1 className='fw-bold fs-4  mt-4 text-center '>About Our Team Members</h1>
           <div className="ms-10 me-10  border-[1px] border-secondary"></div>
-          <div className="flex flex-row ms-10 me-10">
+          <div className="grid grid-cols-1  justify-items-between ms-10 me-20  md:grid-cols-2 md:gap-0 lg:grid-cols-3 lg:gap-2 xl:grid-cols-4 xl:gap-10">
             {members.map((member, index) => (
               <AboutusCard 
                 key={index} 
