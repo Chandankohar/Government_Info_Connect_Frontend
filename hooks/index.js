@@ -27,7 +27,7 @@ export const useProvideAuthAdmin = () => {
     }, [])
 
     const register = async (formData) => {
-        const { name,citizenid,joiningid,municipality,email,address, password } = formData;
+        const { name,citizenid,joiningid,municipality,email,contact,address, password } = formData;
 
         try {
             const { data } = await axiosInstance.post('admin/register', {
@@ -36,6 +36,7 @@ export const useProvideAuthAdmin = () => {
                 joiningid,
                 municipality,
                 email,
+                contact,
                 address,
                 password,
             });
@@ -151,7 +152,7 @@ export const useProvideAuth = () => {
     }, [])
 
     const register = async (registerData) => {
-        const { name,citizenid,addedPhotos,address,municipality, email, password, } = registerData;
+        const { name,citizenid,addedPhotos,address,municipality, email,contact, password, } = registerData;
 
         try {
             const { data } = await axiosInstance.post('user/register', {
@@ -160,7 +161,8 @@ export const useProvideAuth = () => {
                 addedPhotos,
                 address,
                 municipality, 
-                email, 
+                email,
+                contact,
                 password,
             });
             if (data.user && data.token) {
